@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "713385714219",
+    "project_id": "co-opt3-bc1f4",
+    "storage_bucket": "co-opt3-bc1f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713385714219:android:8ba2ef2eb827451423006e",
+        "android_client_info": {
+          "package_name": "com.example.co_opt3final"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd1We7Y6KVqPuoPz7DQFuKqiLWu5xLctI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
