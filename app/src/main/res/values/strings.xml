@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Co-Opt 3 Final</string>
-    <string name="google_map_api_key">AIzaSyA_FdhSdG4CdfbHvnz3dC4PzNUYq798O5o</string>
+    <string name="google_map_api_key">KEY_GOES_HERE</string>
 </resources>
