@@ -14,15 +14,15 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private var mGoogleMap:GoogleMap? = null
+    private val database = Firebase.database("https://co-opt3-bc1f4-default-rtdb.firebaseio.com/")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.mapFragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
     }
 
     // Sets default starting location
@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             map.addMarker(MarkerOptions().position(it).title("Marker here").snippet(snippet))
 
             // Adds location into firebase
-            val database = Firebase.database("https://co-opt3-bc1f4-default-rtdb.firebaseio.com/")
             val reference = database.reference
             val data = reference.push().child("location").setValue(it)
         }
@@ -64,6 +63,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun setPoiClick(map: GoogleMap) {
         map.setOnPoiClickListener { point ->
             val poiMarker = map.addMarker(MarkerOptions().position(point.latLng).title(point.name))
+            val reference = database.reference
+            val data = reference.push().child("location").setValue(point)
+
             if (poiMarker != null) {
                 poiMarker.showInfoWindow()
             }
